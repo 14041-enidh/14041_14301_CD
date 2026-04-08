@@ -1,2 +1,2 @@
 # 14041_CD
-Laboratorios feitos nas aulas de Computação Distribuida, Autor: Fernando Simões nº14041
+Laboratorios e Projeto feitos nas aulas de Computação Distribuida, Autor: Fernando Simões nº14041
