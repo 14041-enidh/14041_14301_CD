@@ -5,6 +5,7 @@ Para iniciar o servidor, basta, abrir a aplicação do docker, fazer cd para a p
 "docker compose up --build"
 O resultado foi o conjunto das seguintes fases:
 
+21/04/2026
 Fase 1:
 Nesta primeira fase do projeto de Computação Distribuida foram-nos pedidos diferentes objetivos, os quais com a aprendizagem dos laboratórios, fomos capazes de cumprir. A ideia principal desta fase era adaptar o trabalho prático desenvolvido na Unidade Curricular de Programação Web para um ambiente de contentores de acordo com os seguintes objetivos:
 
