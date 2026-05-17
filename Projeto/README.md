@@ -43,4 +43,4 @@ Nesta segunda fase do projeto de Computação Distribuída, o objetivo principal
 
   Objetivo 5: Único ponto de acesso exterior
     Apenas o contentor flask_app tem mapeamento de portas (80:80), sendo o único acessível pelo browser do utilizador. A api e o db não têm portas expostas ao exterior, garantindo que toda a comunicação passa obrigatoriamente pelo backend Web.
-    =====================================================================================================================================================================================================
+    =======================================================================================================
