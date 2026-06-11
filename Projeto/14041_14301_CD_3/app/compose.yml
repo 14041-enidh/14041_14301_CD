@@ -1,0 +1,48 @@
+networks:
+    frontend_network:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 10.10.1.0/24
+
+    backend_network:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 10.10.2.0/24
+
+
+services:
+    flask_app:
+        container_name: flask_app_container
+        hostname: flask_app_host
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "80:80"
+        networks:
+            - frontend_network
+        depends_on:
+            - api
+
+    api:
+        container_name: api_container
+        hostname: api
+        build:
+            context: .
+            dockerfile: DockerfileAPI
+        networks:
+            - frontend_network
+            - backend_network
+        depends_on:
+            - db
+
+    db:
+        container_name: db_container
+        hostname: db
+        build:
+            context: .
+            dockerfile: DockerfileDB
+        networks:
+            - backend_network

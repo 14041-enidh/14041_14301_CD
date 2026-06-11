@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .cart-container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .product-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .payment-method {
+            margin-top: 20px;
+        }
+        .payment-method label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .payment-method select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        .checkout-btn {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        .checkout-btn:hover {
+            background-color: #218838;
+        }
+        .back-btn-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .back-btn {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart-container">
+        <h1>Seu Carrinho</h1>
+        <div id="cart-items">
+            <!-- Produtos do carrinho serão inseridos aqui dinamicamente -->
+        </div>
+        <div class="payment-method">
+            <label for="payment-method">Escolha uma forma de pagamento:</label>
+            <select id="payment-method">
+                <option value="credit-card">Cartão de Crédito</option>
+                <option value="paypal">PayPal</option>
+                <option value="bank-transfer">Transferência Bancária</option>
+            </select>
+        </div>
+        <button class="checkout-btn" id="checkout-btn">Finalizar Compra</button>
+        <div class="back-btn-container">
+            <form action="/go-back" method="POST">
+                <button class="back-btn">Voltar</button>
+            </form>
+        </div>
+    </div>
+    <script src="./static/scripts/cart.js"></script>
+</body>
+</html>

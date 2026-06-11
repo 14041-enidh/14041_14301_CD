@@ -1,0 +1,57 @@
+.mapaNauticaNoBorder {
+	border: 0px;
+}
+
+.mapaNautica {
+	border: 2px solid black;
+
+	width: 80vw;
+	height: 60vh;
+
+	text-align: center;
+
+	border-radius: 50px 0px 50px 0px;
+
+	background-color: azure;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.mapaNoLoad {
+	color: red;
+
+	font-size: larger;
+
+	vertical-align: middle;
+
+	animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+	50% {
+		opacity: 0;
+	}
+}
+
+.pinPlaceHolder {
+	text-align: center;
+	width: 400px;
+}
+
+.pinText {
+	text-align: center;
+}
+
+.pinMedia {
+	margin-top: 10px;
+	width: 95%;
+	border-radius: 4px;
+}
+
+.pinMedia:hover {
+	box-shadow: 0 0 10px 1px rgba(30, 7, 235, 0.75);
+}

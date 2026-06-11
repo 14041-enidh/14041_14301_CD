@@ -1,0 +1,182 @@
+[
+    {
+        "name": "Pão de Forma",
+        "price": "€1,50",
+        "image": "pao_de_forma.jpg",
+        "description": "Pão macio e ideal para sanduíches."
+    },
+    {
+        "name": "Leite Integral",
+        "price": "€0,99",
+        "image": "leite_integral.jpg",
+        "description": "Leite integral fresco em embalagem de 1 litro."
+    },
+    {
+        "name": "Arroz Branco",
+        "price": "€2,20",
+        "image": "arroz_branco.jpg",
+        "description": "Arroz branco de alta qualidade, perfeito para refeições diárias."
+    },
+    {
+        "name": "Feijão Preto",
+        "price": "€1,80",
+        "image": "feijao_preto.jpg",
+        "description": "Feijão preto embalado, ideal para pratos tradicionais."
+    },
+    {
+        "name": "Azeite Extra Virgem",
+        "price": "€4,50",
+        "image": "azeite_extra_virgem.jpg",
+        "description": "Azeite de alta qualidade, ideal para saladas e cozinhar."
+    },
+    {
+        "name": "Macarrão Espaguete",
+        "price": "€1,20",
+        "image": "macarrao_espaguete.jpg",
+        "description": "Macarrão espaguete italiano, perfeito para receitas clássicas."
+    },
+    {
+        "name": "Molho de Tomate",
+        "price": "€1,10",
+        "image": "molho_de_tomate.jpg",
+        "description": "Molho de tomate tradicional, ideal para massas e pizzas."
+    },
+    {
+        "name": "Biscoitos de Chocolate",
+        "price": "€2,50",
+        "image": "biscoitos_chocolate.jpg",
+        "description": "Biscoitos crocantes recheados com pedaços de chocolate."
+    },
+    {
+        "name": "Cereal Matinal",
+        "price": "€3,20",
+        "image": "cereal_matinal.jpg",
+        "description": "Cereal integral com frutas secas e mel."
+    },
+    {
+        "name": "Iogurte Natural",
+        "price": "€0,90",
+        "image": "iogurte_natural.jpg",
+        "description": "Iogurte natural sem açúcar, perfeito para lanches saudáveis."
+    },
+    {
+        "name": "Carne Moída",
+        "price": "€6,50",
+        "image": "carne_moida.jpg",
+        "description": "Carne moída fresca de alta qualidade."
+    },
+    {
+        "name": "Filé de Frango",
+        "price": "€7,90",
+        "image": "file_frango.jpg",
+        "description": "Filé de frango magro e fresco, ideal para grelhados."
+    },
+    {
+        "name": "Peito de Peru Fatiado",
+        "price": "€2,80",
+        "image": "peito_peru_fatiado.jpg",
+        "description": "Peito de peru fatiado para sanduíches e saladas."
+    },
+    {
+        "name": "Queijo Mussarela",
+        "price": "€3,40",
+        "image": "queijo_mussarela.jpg",
+        "description": "Queijo mussarela em fatias, ideal para lanches e pizzas."
+    },
+    {
+        "name": "Presunto Cozido",
+        "price": "€2,90",
+        "image": "presunto_cozido.jpg",
+        "description": "Presunto cozido fatiado para lanches rápidos."
+    },
+    {
+        "name": "Alface Crespa",
+        "price": "€1,00",
+        "image": "alface_crespa.jpg",
+        "description": "Alface crespa fresca, ideal para saladas."
+    },
+    {
+        "name": "Tomate Italiano",
+        "price": "€1,80",
+        "image": "tomate_italiano.jpg",
+        "description": "Tomates italianos frescos, perfeitos para molhos e saladas."
+    },
+    {
+        "name": "Cenoura",
+        "price": "€1,20",
+        "image": "cenoura.jpg",
+        "description": "Cenouras frescas e crocantes para diversas receitas."
+    },
+    {
+        "name": "Batata Inglesa",
+        "price": "€1,30",
+        "image": "batata_inglesa.jpg",
+        "description": "Batatas inglesas ideais para purês e fritas."
+    },
+    {
+        "name": "Maçã Gala",
+        "price": "€2,50",
+        "image": "maca_gala.jpg",
+        "description": "Maçãs frescas e suculentas, perfeitas para lanches."
+    },
+    {
+        "name": "Banana Prata",
+        "price": "€1,80",
+        "image": "banana_prata.jpg",
+        "description": "Bananas maduras e doces, ótimas para o café da manhã."
+    },
+    {
+        "name": "Detergente Líquido",
+        "price": "€1,50",
+        "image": "detergente_liquido.jpg",
+        "description": "Detergente líquido para louças, com fragrância suave."
+    },
+    {
+        "name": "Sabão em Pó",
+        "price": "€3,80",
+        "image": "sabao_em_po.jpg",
+        "description": "Sabão em pó para lavar roupas, eficiente contra manchas."
+    },
+    {
+        "name": "Papel Higiênico",
+        "price": "€4,20",
+        "image": "papel_higienico.jpg",
+        "description": "Papel higiênico macio e resistente, pacote com 12 rolos."
+    },
+    {
+        "name": "Água Mineral",
+        "price": "€0,60",
+        "image": "agua_mineral.jpg",
+        "description": "Água mineral em garrafa de 500ml."
+    },
+    {
+        "name": "Refrigerante de Cola",
+        "price": "€1,50",
+        "image": "refrigerante_cola.jpg",
+        "description": "Refrigerante sabor cola em lata de 350ml."
+    },
+    {
+        "name": "Suco de Laranja",
+        "price": "€2,30",
+        "image": "suco_laranja.jpg",
+        "description": "Suco natural de laranja, sem adição de açúcar."
+    },
+    {
+        "name": "Café Solúvel",
+        "price": "€3,50",
+        "image": "cafe_soluvel.jpg",
+        "description": "Café solúvel prático, ideal para o dia a dia."
+    },
+    {
+        "name": "Chocolate ao Leite",
+        "price": "€2,00",
+        "image": "chocolate_ao_leite.jpg",
+        "description": "Barra de chocolate ao leite, perfeita para sobremesas."
+    },
+    {
+        "name": "Sorvete de Baunilha",
+        "price": "€5,50",
+        "image": "sorvete_baunilha.jpg",
+        "description": "Sorvete cremoso sabor baunilha, ideal para sobremesas."
+    }
+]

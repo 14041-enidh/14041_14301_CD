@@ -1,0 +1,108 @@
+body {
+    background-color: #fffaf0;
+}
+
+h1 {
+    font-family:      "lucida calligraphy", arial, 'sans serif'; 
+    color:            blueviolet;
+    text-align:       center;
+}
+
+h2 {
+    font-family:      "lucida calligraphy", arial, 'sans serif'; 
+    color:            blue;
+    text-align:       center;
+}
+
+.myImage {
+    display:         block;
+    margin:          auto;
+    margin-bottom:   5px;
+}
+
+.myImageSmallScreen {
+    display:         none;
+}
+
+/* Aqui regras para viewports menores ou iguais a 480px */
+@media (max-width: 480px) {
+    .myImage {
+        display:         none;
+    }
+
+    .myImageSmallScreen {
+        display:         block;
+    }
+}
+
+.form {
+	border:			1px solid red;
+	
+	text-align:		center;
+	
+	width:			80%;
+	
+	margin-left:	auto;
+	margin-right:	auto;
+	
+	margin-top:		12px;
+	margin-bottom:	12px
+}
+
+.formEntry {
+	border:			1px solid blue;
+	text-align:		center;
+	
+	width:			80%;
+	
+	margin-left:	auto;
+	margin-right:	auto;
+	
+	margin-top:		8px;
+	margin-bottom:	8px;
+}
+
+.formName {
+	border:			1px solid green;
+	
+	display:		inline-block;
+
+	text-align:		right;
+	
+	width:			50%;
+
+	margin-left:	auto;
+	margin-right:	auto;
+	
+	margin-top:		4px;
+	margin-bottom:	4px;
+	
+	padding-right:	2px;
+}
+
+.formValue {
+	border:			1px solid orange;
+	
+	width:			50%;
+	
+	margin-left:	auto;
+	margin-right:	auto;
+	
+	margin-top:		4px;
+	margin-bottom:	4px;
+	
+	padding-left:	2px;
+}
+
+.formNoDebug {
+	border:			0px;
+}
+
+.invalidNif {
+	color: 			red;
+	font-weight: 	bold;
+}
+
+.validNif {
+	color: 			green;
+}

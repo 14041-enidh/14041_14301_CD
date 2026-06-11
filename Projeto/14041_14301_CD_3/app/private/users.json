@@ -1,0 +1,35 @@
+{
+    "usersInfo": [
+        {
+            "user": [
+                {
+                    "email": "teste@gmail.com",
+                    "password": "aaa",
+                    "mailConfirmado": true,
+                    "produtos": [],
+                    "address": "Avenida Doutora Laura Ayers n29",
+                    "age": 20,
+                    "profile_picture": "./static/images/profiles/gugacarita@gmail.com.jpg"
+                },
+                {
+                    "email": "gugacarita@gmail.com",
+                    "password": "aaa",
+                    "mailConfirmado": true,
+                    "address": "Avenida Doutora Laura Ayers n29",
+                    "age": 25,
+                    "profile_picture": "./static/images/profiles/gugacarita@gmail.com.jpg"
+                },
+                {
+                    "email": "admin@gmail.com",
+                    "password": "admin",
+                    "mailConfirmado": true,
+                    "produtos": [],
+                    "address": "Avenida Doutora Laura Ayers n29",
+                    "age": 20,
+                    "profile_picture": "./static/images/profiles/gugacarita@gmail.com.jpg",
+                    "admin": true
+                }
+            ]
+        }
+    ]
+}

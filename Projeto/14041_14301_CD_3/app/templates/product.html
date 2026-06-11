@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .product-detail {
+            display: inline-block;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .product-detail img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .product-detail h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .product-detail p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .back-btn-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .back-btn {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-detail">
+        <img src="/static/images/produtos/{{ product.image }}" alt="{{ product.name }}">
+        <h1>{{ product.name }}</h1>
+        <p>Preço: {{ product.price }}</p>
+        <p>{{ product.description }}</p>
+    </div>
+    <div class="back-btn-container">
+        <form action="/go-back" method="POST">
+            <button class="back-btn">Voltar</button>
+        </form>
+    </div>
+</body>
+</html>

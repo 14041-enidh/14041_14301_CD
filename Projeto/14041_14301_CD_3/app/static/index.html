@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supermercado Online - Login/Criar Conta</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 40px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        padding: 20px;
+      }
+
+      .container h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      .form-group button {
+        width: 100%;
+        padding: 10px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .form-group button:hover {
+        background-color: #218838;
+      }
+
+      .toggle-link {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        color: #007bff;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .toggle-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+    <script src="/static/scripts/script_index.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container" id="login-container">
+      <h1>Login</h1>
+      <form
+        action="/doLogin"
+        method="POST"
+        onsubmit="return FormLoginValidator()"
+        name="FormLogin"
+      >
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="emailID"
+            name="email"
+            pattern="{{ emailRegEx }}"
+            placeholder="Digite seu email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Senha:</label>
+          <input
+            type="password"
+            id="passwordID"
+            name="password"
+            pattern="{{ passwordRegEx }}"
+            placeholder="Digite sua senha"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <button type="submit">Entrar</button>
+        </div>
+      </form>
+      <a class="toggle-link" onclick="toggleForm()">Não tem conta? Crie uma!</a>
+    </div>
+
+    <div class="container" id="signup-container" style="display: none">
+      <h1>Criar Conta</h1>
+      <form
+        action="/doAccCreate"
+        method="POST"
+        onsubmit="return FormAccValidator()"
+        name="FormAccCreate"
+      >
+        <div class="form-group">
+          <label for="signup-email">Email:</label>
+          <input
+            type="email"
+            id="signup-emailID"
+            name="email"
+            placeholder="Digite seu email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="signup-password">Senha:</label>
+          <input
+            type="password"
+            id="signup-passwordID"
+            name="password"
+            placeholder="Crie uma senha"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="signup-confirm-password">Confirmar Senha:</label>
+          <input
+            type="password"
+            id="signup-confirm-passwordID"
+            name="confirm-password"
+            placeholder="Confirme sua senha"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <button type="submit">Criar Conta</button>
+        </div>
+      </form>
+      <a class="toggle-link" onclick="toggleForm()"
+        >Já tem uma conta? Faça login!</a
+      >
+    </div>
+
+
+    <div class="dashboard"
+         style="background: #fff;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                width: 400px;
+                padding: 20px;
+                margin: 20px auto;
+                text-align: center;">
+
+      <h2>Painel IoT (Weather)</h2>
+
+      <div class="box"
+           style="background: #f1f3f5;
+                  padding: 15px;
+                  border-radius: 6px;
+                  margin-bottom: 10px;
+                  border-left: 5px solid #007bff;
+                  text-align: left;">
+
+        <strong>Dados via REST API:</strong>
+        <div id="dados-rest"
+             style="font-size: 20px;
+                    font-weight: bold;
+                    float: right;">
+          A carregar...
+        </div>
+      </div>
+
+      <div class="box mqtt"
+           style="background: #f1f3f5;
+                  padding: 15px;
+                  border-radius: 6px;
+                  margin-bottom: 10px;
+                  border-left: 5px solid #ff9f43;
+                  text-align: left;">
+
+        <strong>Dados via MQTT:</strong>
+        <div id="dados-mqtt"
+             style="font-size: 20px;
+                    font-weight: bold;
+                    float: right;">
+          A aguardar...
+        </div>
+      </div>
+
+    </div>
+    <script>
+      function pedirDadosAPI() {
+        fetch('https://cjsg.ddns.net:8443/weather/values')
+                .then(resposta => resposta.json())
+                .then(dados => {
+                  document.getElementById('dados-rest').innerText = dados.temperature + "°C / " + dados.humidity + "%";
+                })
+                .catch(erro => {
+                  document.getElementById('dados-rest').innerText = "Erro ao ler link";
+                });
+      }
+      setInterval(pedirDadosAPI, 5000); // Atualiza de 5 em 5 segundos automaticamente
+      pedirDadosAPI(); // Liga assim que a página abre
+
+      var cliente = new Paho.MQTT.Client("cjsg.ddns.net", 9001, "noobid" + Math.random());
+
+      cliente.onMessageArrived = function(mensagem) {
+        var dados = JSON.parse(mensagem.payloadString);
+        document.getElementById('dados-mqtt').innerText = dados.temperature + "°C / " + dados.humidity + "%";
+      };
+
+      cliente.connect({
+        onSuccess: function() {
+          console.log("Ligado ao MQTT!");
+          cliente.subscribe("weather"); // Subscreve o tópico do sensor
+        }
+      });
+    </script>
+
+
+  </body>
+</html>

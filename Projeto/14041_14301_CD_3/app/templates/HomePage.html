@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Open Street Maps API - Begin -->
+    <!-- Versão 1.9.4 - https://leafletjs-cdn.s3.amazonaws.com/content/leaflet/v1.9.4/leaflet.zip -->
+    <link rel="stylesheet" href="/static/external/leaflet/leaflet.css" />
+
+    <script src="/static/external/leaflet/leaflet.js"></script>
+    <!-- Open Street Maps API - End -->
+
+    <!-- Leaflet Marker Cluster - Begin -->
+    <!-- Versão 1.4.1 - https://github.com/Leaflet/Leaflet.markercluster -->
+
+    <link rel="stylesheet" href="/static/external/markercluster/MarkerCluster.css" />
+    <link rel="stylesheet" href="/static/external/markercluster/MarkerCluster.Default.css" />
+
+    <script src="/static/external/markercluster/leaflet.markercluster.js"></script>
+    <!-- Leaflet Marker Cluster - End -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <!-- Estilos específicos para o mapa - Begin -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/mapas.css">
+    <!-- Estilos específicos para o mapa - End -->
+
+    <!-- Código JavaScript global do projeto - Begin -->
+    <script type="module" src="/static/scripts/main.js" >
+    </script>
+    <!-- Código JavaScript global do projeto - End -->
+    
+    <script type="text/JavaScript">
+      function initPagina() {
+        initMapa();
+        
+      }
+    </script>
+  
+    <title>Supermercado XPTO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        header .account-actions {
+            display: flex;
+            gap: 10px;
+        }
+        header .account-actions button {
+            background-color: #fff;
+            color: #28a745;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        header .account-actions button:hover {
+            background-color: #e2e6ea;
+        }
+        .account-actions input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        
+        .account-actions #search-btn {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .account-actions #search-btn:hover {
+            background-color: #218838;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .product h2 {
+            font-size: 18px;
+            color: #333;
+            margin: 0 0 10px;
+        }
+        .product p {
+            font-size: 16px;
+            color: #666;
+            margin: 0 0 15px;
+        }
+        .product button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .product button:hover {
+            background-color: #218838;
+        }
+        .map-section {
+            background-color: #28a745;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .map-section h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .map-section .mapaNautica {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body onLoad="initPagina()">
+    <header>
+        <h1>Supermercado XPTO</h1>
+        <div class="account-actions">
+            <button id="search-btn">Pesquisar</button>
+            <input type="text" id="search-input" placeholder="Pesquisar produtos..." />
+            <button id="account-btn">Minha Conta</button>
+            <button id="cart-btn">Carrinho</button>
+            <button id="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    <main class="products">
+        <!-- Produtos serão carregados dinamicamente pelo JavaScript -->
+    </main>
+
+    <script src="./static/scripts/scriptHomePage.js"></script>
+    <section class="map-section">
+        <h2>Visite uma das nossas lojas fisicas!</h2>
+        <div id="map" class="mapaNautica"><span class="mapaNoLoad">Erro ao carregar o mapa!</span></div>
+    </section>
+</body>
+</html>
