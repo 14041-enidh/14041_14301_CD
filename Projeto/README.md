@@ -57,3 +57,38 @@ Nesta segunda fase do projeto de Computação Distribuída, o objetivo principal
 No Server.py foi criada uma função base db_request() que encapsula a ligação TCP, e todas as rotas Flask passaram a invocar funções específicas como get_user(email) ou save_user(user), em vez de carregar ficheiros inteiros. Esta alteração torna o sistema mais eficiente e correto do ponto de vista de uma arquitetura distribuída.
 
 =======================================================================================================
+
+Fase 3 – 12/06/2026
+Nesta terceira fase do projeto, o objetivo foi integrar dados de sensores IoT (Temperatura e Humidade) provenientes do laboratório do docente na interface da aplicação web do Supermercado XPTO, através de duas formas distintas de comunicação: API REST e MQTT via WebSockets.
+
+Abordagem escolhida: Integração do lado do cliente (Client-Side Integration)
+A integração foi implementada exclusivamente no ficheiro index.html, sem alterações ao backend Flask nem aos contentores Docker. Esta abordagem evita sobrecarregar o servidor e elimina a necessidade de instalar bibliotecas adicionais, tirando partido do facto de os browsers modernos suportarem nativamente fetch() e WebSockets.
+
+Objetivo 1: Acesso via API REST
+Foi implementada a função pedirDadosAPI(), que usa o método fetch() para interrogar o endpoint REST do docente (https://cjsg.ddns.net:8443/weather/values) a cada 5 segundos, atualizando automaticamente os valores de temperatura e humidade no dashboard. O acesso a este endpoint respeita as restrições de CORS impostas pelo servidor externo, sendo feito diretamente pelo browser do utilizador.
+
+Objetivo 2: Acesso via MQTT (WebSockets)
+Foi incluída a biblioteca Paho-MQTT (Eclipse Foundation) no <head> do HTML. O cliente MQTT liga-se ao broker do docente (cjsg.ddns.net) na porta 9001 (WebSockets) e subscreve o tópico weather, atualizando o ecrã instantaneamente sempre que uma nova mensagem é publicada pelo sensor. Este modelo Publicação/Subscrição complementa o modelo Pedido/Resposta da REST API, sendo mais adequado para monitorização em tempo real.
+
+Objetivo 3: Implementação
+Foi adicionada uma secção visual na página de login com dois blocos distintos, um para os dados REST e outro para os dados MQTT, permitindo ao utilizador comparar as duas fontes de dados em simultâneo.
+
+Dificuldades:
+Durante os testes, o endpoint REST devolveu dados corretamente (servidos via cache do servidor do docente). O cliente MQTT conectou-se com sucesso ao broker mas permaneceu em estado de espera (A aguardar...), o que reflete uma interrupção temporária no hardware do sensor no laboratório, e não um erro no código implementado.
+
+=======================================================================================================
+
+Conclusão
+
+O desenvolvimento deste projeto ao longo das três fases permitiu construir progressivamente uma aplicação web distribuída, partindo de uma arquitetura simples, até uma solução mas complexa, mas organizada e melhor isolada, terminando com a implementação de IoT.
+
+Na Fase 1 foi estabelecida a separação entre o backend Web e a persistência de dados através de comunicação TCP. Na Fase 2 essa arquitetura foi aprofundada com a introdução de uma API REST como intermediário, reforçando o isolamento entre camadas e aplicando posteriormente operações CRUD direcionadas para tornar a comunicação mais eficiente. Na Fase 3 a aplicação foi estendida ao mundo IoT, integrando dados reais de sensores através de dois métodos distintos, REST e MQTT, sem necessidade de alterar a infraestrutura existente.
+
+Ao longo das três fases é possível identificar a presença dos cinco princípios fundamentais dos sistemas distribuídos. 
+- A separação em contentores independentes contribui para a Resiliência, uma vez que cada componente pode falhar ou ser reiniciado sem comprometer os restantes.
+- A substituição das operações genéricas de leitura por operações CRUD direcionadas melhora o Desempenho e a Eficiência, evitando o carregamento desnecessário de dados.
+- O modelo de redes isoladas, onde o contentor db só é acessível pela API, e a API só é acessível pelo Flask, implementa o princípio de Zero-Trust, em que nenhum componente confia diretamente noutro sem passar pela camada adequada.
+- Por fim, a arquitetura modular baseada em contentores facilita a Escalabilidade, permitindo replicar ou substituir qualquer camada de forma independente.
+
+O resultado final é uma aplicação funcional que demonstra na prática os principais conceitos de Computação Distribuída: comunicação entre processos, modelo cliente/servidor, contentorização, Web Services REST e protocolos IoT. Cada fase acrescentou uma camada de complexidade controlada, refletindo a forma como sistemas distribuídos reais evoluem, de forma incremental e modular.
+
