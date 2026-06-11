@@ -53,6 +53,7 @@ Nesta segunda fase do projeto de Computação Distribuída, o objetivo principal
   - get_all_products (devolve todos os produtos),
   - get_product_by_name (obtém um produto pelo nome),
   - get_confirmation, save_confirmation e delete_confirmation (gestão de tokens de confirmação de email).
-    No Server.py foi criada uma função base db_request() que encapsula a ligação TCP, e todas as rotas Flask passaram a invocar funções específicas como get_user(email) ou save_user(user), em vez de carregar ficheiros inteiros. Esta alteração torna o sistema mais eficiente e correto do ponto de vista de uma arquitetura distribuída.
+
+No Server.py foi criada uma função base db_request() que encapsula a ligação TCP, e todas as rotas Flask passaram a invocar funções específicas como get_user(email) ou save_user(user), em vez de carregar ficheiros inteiros. Esta alteração torna o sistema mais eficiente e correto do ponto de vista de uma arquitetura distribuída.
 
 =======================================================================================================
