@@ -44,4 +44,14 @@ Nesta segunda fase do projeto de Computação Distribuída, o objetivo principal
 
   Objetivo 5: Único ponto de acesso exterior
     Apenas o contentor flask_app tem mapeamento de portas (80:80), sendo o único acessível pelo browser do utilizador. A api e o db não têm portas expostas ao exterior, garantindo que toda a comunicação passa obrigatoriamente pelo backend Web.
-    =======================================================================================================
+
+  UPDATE 11/06/2026 – Refatorização com Operações CRUD
+    Após revisão do professor, foi identificada uma ineficiência na implementação anterior: sempre que era necessário aceder a um dado específico (por exemplo, um utilizador), o sistema carregava o ficheiro JSON completo e filtrava em Python o registo pretendido. 
+    Para corrigir isto, foi refatorizado o protocolo de comunicação entre o Server.py e o Server_db.py, substituindo as ações genéricas load e save por operações CRUD direcionadas. Foram implementadas as seguintes ações: 
+  - get_user (obtém um utilizador pelo email),
+  - save_user (atualiza ou cria um utilizador),
+  - get_all_products (devolve todos os produtos),
+  - get_product_by_name (obtém um produto pelo nome),
+  - get_confirmation, save_confirmation e delete_confirmation (gestão de tokens de confirmação de email).
+    No Server.py foi criada uma função base db_request() que encapsula a ligação TCP, e todas as rotas Flask passaram a invocar funções específicas como get_user(email) ou save_user(user), em vez de carregar ficheiros inteiros. Esta alteração torna o sistema mais eficiente e correto do ponto de vista de uma arquitetura distribuída.
+=======================================================================================================
