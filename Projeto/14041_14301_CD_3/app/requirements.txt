@@ -1,4 +1,0 @@
-flask
-flask-session
-flask-mail
-requests
