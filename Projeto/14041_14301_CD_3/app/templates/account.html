@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .account-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .account-container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .account-container p {
+            font-size: 16px;
+            margin: 5px 0;
+            color: #333;
+        }
+        .account-container img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+        }
+        .account-container .actions {
+            margin-top: 20px;
+        }
+        .account-container .actions button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .account-container .actions button:hover {
+            background-color: #218838;
+        }
+        .back-btn-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .back-btn {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="account-container">
+        <h1>Informações da Conta</h1>
+        
+        <!-- Foto de Perfil -->
+        {% if user.profile_picture %}
+        <img src="{{ user.profile_picture }}" alt="Foto de Perfil">
+        {% else %}
+        <img src="/static/images/profiles/default.jpeg" alt="Foto de Perfil">
+        {% endif %}
+        
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Status do Email:</strong> {{ 'Confirmado' if user.mailConfirmado else 'Não Confirmado' }}</p>
+        
+        <!-- Informações Adicionais -->
+        {% if user.address %}
+        <p><strong>Morada:</strong> {{ user.address }}</p>
+        {% endif %}
+        
+        {% if user.age %}
+        <p><strong>Idade:</strong> {{ user.age }}</p>
+        {% endif %}
+        
+        <div class="actions">
+            <button onclick="window.location.href='/account/update'">Editar Informações</button>
+        </div>
+    </div>
+    <div class="back-btn-container">
+        <form action="/go-back" method="POST">
+            <button class="back-btn">Voltar</button>
+        </form>
+    </div>
+</body>
+</html>
