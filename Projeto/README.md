@@ -56,6 +56,7 @@ Nesta segunda fase do projeto de Computação Distribuída, o objetivo principal
   Apenas o contentor flask_app tem mapeamento de portas (80:80), sendo o único acessível pelo browser do utilizador. A api e o db não têm portas expostas ao exterior, garantindo que toda a comunicação passa obrigatoriamente pelo backend Web.
 
   UPDATE 11/06/2026 – Refatorização com Operações CRUD
+  
     Após revisão do professor, foi identificada uma ineficiência na implementação anterior: sempre que era necessário aceder a um dado específico (por exemplo, um utilizador), o sistema carregava o ficheiro JSON completo e filtrava em Python o registo pretendido. 
     Para corrigir isto, foi refatorizado o protocolo de comunicação entre o Server.py e o Server_db.py, substituindo as ações genéricas load e save por operações CRUD direcionadas. Foram implementadas as seguintes ações: 
   - get_user (obtém um utilizador pelo email),
@@ -92,6 +93,7 @@ Dificuldades:
   Durante os testes, o endpoint REST devolveu dados corretamente, no entanto, o cliente MQTT conectou-se com sucesso ao broker mas permaneceu em estado de espera (A aguardar...), o que reflete um erro da parte do servidor do docente, e não um erro no código implementado.
 
   UPDATE 15/06/2026 – Credenciais MQTT e atualização da API de callbacks
+  
     Após indicação do docente, foram adicionadas as credenciais de acesso ao servidor MQTT (utilizador: cd, password: 1qaz"WSX), que eram necessárias para estabelecer a ligação autenticada. Foi também atualizada a inicialização do cliente MQTT para usar CallbackAPIVersion.VERSION2, eliminando o aviso de "Callback API version 1 is deprecated, update to latest version" que aparecia nos logs do servidor.No entanto, os dados MQTT continuam sem aparecer no dashboard, o que indica que o sensor do docente não está a publicar mensagens neste momento. Assim que voltar a publicar, os dados aparecerão automaticamente.
 
 =======================================================================================================
