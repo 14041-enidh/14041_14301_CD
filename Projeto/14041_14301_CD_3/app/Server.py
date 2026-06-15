@@ -62,7 +62,8 @@ def on_message(client, userdata, message):
     weather_mqtt = json.loads(message.payload)
 
 try:
-    mqtt_client = mqtt.Client()
+    mqtt_client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+    mqtt_client.username_pw_set("cd", '1qaz"WSX')
     mqtt_client.on_message = on_message
     mqtt_client.connect("cjsg.ddns.net", 1883)
     mqtt_client.subscribe("weather")
