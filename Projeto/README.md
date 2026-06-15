@@ -92,7 +92,7 @@ Dificuldades:
   Durante os testes, o endpoint REST devolveu dados corretamente, no entanto, o cliente MQTT conectou-se com sucesso ao broker mas permaneceu em estado de espera (A aguardar...), o que reflete um erro da parte do servidor do docente, e não um erro no código implementado.
 
 UPDATE 15/06/2026 – Credenciais MQTT e atualização da API de callbacks
-Após indicação do docente, foram adicionadas as credenciais de acesso ao servidor MQTT (utilizador: cd, password: 1qaz"WSX), que eram necessárias para estabelecer a ligação autenticada. Foi também atualizada a inicialização do cliente MQTT para usar CallbackAPIVersion.VERSION2, eliminando o aviso de "Callback API version 1 is deprecated, update to latest version" que aparecia nos logs do servidor.
+Após indicação do docente, foram adicionadas as credenciais de acesso ao servidor MQTT (utilizador: cd, password: 1qaz"WSX), que eram necessárias para estabelecer a ligação autenticada. Foi também atualizada a inicialização do cliente MQTT para usar CallbackAPIVersion.VERSION2, eliminando o aviso de "Callback API version 1 is deprecated, update to latest version" que aparecia nos logs do servidor.No entanto, os dados MQTT continuam sem aparecer no dashboard, o que indica que o sensor do docente não está a publicar mensagens neste momento. Assim que voltar a publicar, os dados aparecerão automaticamente.
 
 =======================================================================================================
 
