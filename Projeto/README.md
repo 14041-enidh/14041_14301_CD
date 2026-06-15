@@ -57,7 +57,7 @@ Nesta segunda fase do projeto de Computação Distribuída, o objetivo principal
 
   UPDATE 11/06/2026 – Refatorização com Operações CRUD
   
-    Após revisão do professor, foi identificada uma ineficiência na implementação anterior: sempre que era necessário aceder a um dado específico (por exemplo, um utilizador), o sistema carregava o ficheiro JSON completo e filtrava em Python o registo pretendido. 
+  Após revisão do professor, foi identificada uma ineficiência na implementação anterior: sempre que era necessário aceder a um dado específico (por exemplo, um utilizador), o sistema carregava o ficheiro JSON completo e filtrava em Python o registo pretendido. 
     Para corrigir isto, foi refatorizado o protocolo de comunicação entre o Server.py e o Server_db.py, substituindo as ações genéricas load e save por operações CRUD direcionadas. Foram implementadas as seguintes ações: 
   - get_user (obtém um utilizador pelo email),
   - save_user (atualiza ou cria um utilizador),
@@ -94,7 +94,7 @@ Dificuldades:
 
   UPDATE 15/06/2026 – Credenciais MQTT e atualização da API de callbacks
   
-    Após indicação do docente, foram adicionadas as credenciais de acesso ao servidor MQTT (utilizador: cd, password: 1qaz"WSX), que eram necessárias para estabelecer a ligação autenticada. Foi também atualizada a inicialização do cliente MQTT para usar CallbackAPIVersion.VERSION2, eliminando o aviso de "Callback API version 1 is deprecated, update to latest version" que aparecia nos logs do servidor.No entanto, os dados MQTT continuam sem aparecer no dashboard, o que indica que o sensor do docente não está a publicar mensagens neste momento. Assim que voltar a publicar, os dados aparecerão automaticamente.
+  Após indicação do docente, foram adicionadas as credenciais de acesso ao servidor MQTT (utilizador: cd, password: 1qaz"WSX), que eram necessárias para estabelecer a ligação autenticada. Foi também atualizada a inicialização do cliente MQTT para usar CallbackAPIVersion.VERSION2, eliminando o aviso de "Callback API version 1 is deprecated, update to latest version" que aparecia nos logs do servidor.No entanto, os dados MQTT continuam sem aparecer no dashboard, o que indica que o sensor do docente não está a publicar mensagens neste momento. Assim que voltar a publicar, os dados aparecerão automaticamente.
 
 =======================================================================================================
 
