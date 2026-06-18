@@ -1,7 +1,7 @@
 # 14041_14301_CD
 Laboratorios e Projeto feitos nas aulas de Computação Distribuida, Autores: Fernando Simões nº14041 e Rodrigo Ribeiro nº14301
 
-Entry Point Global:
+Global Entry Point:
 - Projeto
   - [Fase 1](./Projeto/14041_14301_CD)
 
