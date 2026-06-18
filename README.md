@@ -11,4 +11,4 @@ Entry Point Global:
 
 Laboratórios:
 - [Calculadora](./Calculadora)
-- [Echo_Concorrente](./Echo_Concorrente)
+- [Echo Concorrente](./Echo Concorrente)
