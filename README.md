@@ -7,7 +7,7 @@ Entry Point Global:
 
   - [Fase 2](./Projeto/14041_14301_CD_2)
 
-  - [Fase 3](./Projeto/14041_14301_CD_3)
+  - [Fase 3 (Última Versão)](./Projeto/14041_14301_CD_3)
 
 - Laboratórios:
   - [Calculadora](./Calculadora)
