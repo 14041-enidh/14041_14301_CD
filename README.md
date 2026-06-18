@@ -9,6 +9,6 @@ Entry Point Global:
 
   - [Fase 3](./Projeto/14041_14301_CD_3)
 
-Laboratórios:
-- [Calculadora](./Calculadora)
-- [Echo Concorrente](./Echo%20Concorrente)
+- Laboratórios:
+  - [Calculadora](./Calculadora)
+  - [Echo Concorrente](./Echo%20Concorrente)
