@@ -35,7 +35,7 @@ Nesta segunda fase do projeto de Computação Distribuída, o objetivo principal
 
   Objetivo 1: Introdução de uma API REST como intermediário
 
-  Na Fase 1, o Server.py comunicava diretamente com o servidor de base de dados via socket TCP. Na Fase 2, essa comunicação direta foi eliminada. Ffoi criado um novo servidor intermédio, o Server_api.py, que funciona como ponte entre os dois, usando métodos HTTP, GET /load para carregar dados e POST /save para os guardar. O  Server.py passou a enviar pedidos HTTP a este servidor para carregar ou guardar dados, sem precisar de saber como esses dados são guardados.
+  Na Fase 1, o Server.py comunicava diretamente com o servidor de base de dados via socket TCP. Na Fase 2, essa comunicação direta foi eliminada. Foi criado um novo servidor intermédio, o Server_api.py, que funciona como ponte entre os dois, usando métodos HTTP, GET /load para carregar dados e POST /save para os guardar. O  Server.py passou a enviar pedidos HTTP a este servidor para carregar ou guardar dados, sem precisar de saber como esses dados são guardados.
 
   Objetivo 2: Manutenção da comunicação TCP entre a API e a Base de Dados
     
