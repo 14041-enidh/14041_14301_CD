@@ -7,3 +7,6 @@ entry point:
 
 - [Fase 3](./14041_14301_CD_3)
 
+- [Relatório](./Projeto/RelatorioCD_G10.pdf)
+Se descarregar este relatório e abrir, tem uma tabela de conteúdos na qual se clicar em qualquer secção irá ter á pagina onde a mesma está, tal como neste Global Entry Point. Isto não é possivel desde o github
+
