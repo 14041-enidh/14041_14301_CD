@@ -68,7 +68,7 @@ Nesta segunda fase do projeto de Computação Distribuída, o objetivo principal
 =======================================================================================================
 
 Fase 3 – 12/06/2026
-Nesta terceira fase do projeto, o objetivo foi integrar dados de sensores IoT (Temperatura e Humidade) provenientes do laboratório do docente na interface da aplicação web do Supermercado XPTO, através de duas formas distintas de comunicação: API REST e MQTT via WebSockets.
+Nesta terceira fase do projeto, o objetivo foi integrar dados de sensores IoT (Temperatura e Humidade) provenientes do laboratório do docente na interface da aplicação web do Supermercado XPTO, através de duas formas distintas de comunicação: API REST e MQTT.
 
 Abordagem escolhida: Integração no Backend
   
